@@ -10,7 +10,7 @@ import com.camstock.file.CamFileReader;
 
 public class CamFileReaderTest {
 	
-	private String fileLocation = "/Users/juan/workspace/camstock/src/test/resources/quotes.csv";
+	private String fileLocation = "/apps/git/camstock/camstock/src/test/resources/quotes.csv";
 	
 	@Test
 	public void testRead() throws IOException {

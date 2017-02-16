@@ -13,19 +13,6 @@ public class StockServiceTest {
 		StockService service = new StockService();
 		Stock stock = service.getStockDetails("GOOG");
 		
-		System.out.println(stock);
-		
 		assertEquals("GOOG", stock.getSymbol());
 	}
-	
-	@Test
-	public void testGetStockDetailsOther() {
-		StockService service = new StockService();
-		Stock stock = service.getStockDetails("JPM");
-		
-		System.out.println(stock);
-		
-		assertEquals("GOOG", stock.getSymbol());
-	}
-
 }
