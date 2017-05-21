@@ -1,10 +1,9 @@
 package com.camstock.client;
 
-import static org.junit.Assert.assertEquals;
-
+import com.camstock.model.Stock;
 import org.junit.Test;
 
-import com.camstock.model.Stock;
+import static org.junit.Assert.assertEquals;
 
 public class YahooStockClientTest {
 	
@@ -12,8 +11,6 @@ public class YahooStockClientTest {
 	public void testGetStockDetails() {
 		YahooStockClient client = new YahooStockClient();
 		Stock stock = client.getStockDetails("GOOG");
-		
-		System.out.println(stock);
 		
 		assertEquals("GOOG", stock.getSymbol());
 	}

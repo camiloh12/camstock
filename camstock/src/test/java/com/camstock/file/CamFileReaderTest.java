@@ -1,22 +1,20 @@
 package com.camstock.file;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
-
 import org.junit.Test;
 
-import com.camstock.file.CamFileReader;
+import java.io.File;
+import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
 
 public class CamFileReaderTest {
 	
-	private String fileLocation = "/apps/git/camstock/camstock/src/test/resources/quotes.csv";
-	
 	@Test
 	public void testRead() throws IOException {
-		String string = CamFileReader.read(fileLocation);
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("quotes.csv").getFile());
+		String string = CamFileReader.read(file.getAbsolutePath());
 		
 		assertEquals("\"Google Inc.\",\"GOOG\",537.50,542.14,534.83", string);
 	}
-
 }
